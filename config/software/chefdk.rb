@@ -58,12 +58,12 @@ build do
 
   # Perform multiple gem installs to better isolate/debug failures
   {
-    'chefspec'          => '4.2.0',
+    'chefspec'          => '4.3.0',
     'fauxhai'           => '2.2.0',
     'rubocop'           => '0.31.0',
     'knife-spork'       => '1.5.0',
     'winrm-transport'   => '1.0.2',
-    'knife-windows'     => '1.0.0.rc.1',
+    'knife-windows'     => '0.8.6.rc.0',
     # Strainer build is hosed on windows
     # 'strainer'        => '0.15.0',
   }.each do |name, version|

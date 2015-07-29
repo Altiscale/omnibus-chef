@@ -44,10 +44,13 @@ end
 # For now we resolve it by using an older version of the cert. This only works
 # if you have this version of the CA bundle stored via S3 caching (which Chef
 # Software does).
-override :cacerts, version: '2014.08.20'
+override :cacerts,        version: '2014.08.20'
 
 # Uncomment to pin the chef version
-# override :chef,           version: "12.3.0"
+override :chef,           version: "12.4.1"
+override :ohai,           version: '8.5.0'
+override :chefdk,         version: '0.7.0.rc.4'
+
 override :berkshelf,      version: "v3.2.4"
 override :bundler,        version: "1.10.0"
 override :'chef-vault',   version: "v2.6.1"
@@ -66,7 +69,6 @@ override :ruby,           version: "2.1.6"
 override :'ruby-windows', version: "2.1.6"
 override :'ruby-windows-devkit', version: "4.7.2-20130224-1151"
 override :'openssl-windows', version: "1.0.1m"
-#override :'ruby-windows', version: "2.0.0-p451"
 ######
 
 ######
@@ -76,7 +78,7 @@ override :'openssl-windows', version: "1.0.1m"
 override :rubygems,       version: "2.4.4"
 ######
 
-override :'test-kitchen', version: "v1.4.0"
+override :'test-kitchen', version: "v1.4.1"
 override :'kitchen-vagrant', version: "v0.18.0"
 override :yajl,           version: "1.2.1"
 override :zlib,           version: "1.2.8"
@@ -86,7 +88,7 @@ override :zlib,           version: "1.2.8"
 override :'chef-provisioning-fog', version: "v0.13.2"
 override :'chef-provisioning-vagrant', version: "v0.8.3"
 override :'chef-provisioning-azure', version: "v0.3.2"
-override :'chef-provisioning-aws', version: "v1.2.1"
+override :'chef-provisioning-aws', version: "v1.3.0"
 
 dependency "preparation"
 dependency "chefdk"
@@ -110,6 +112,7 @@ end
 
 package :msi do
   upgrade_code "AB1D6FBD-F9DC-4395-BDAD-26C4541168E7"
+  signing_identity "F74E1A68005E8A9C465C3D2FF7B41F3988F0EA09", machine_store: true
 end
 
 compress :dmg

@@ -63,8 +63,9 @@ override :'ruby-windows', version: "2.0.0-p451"
 override :rubygems,       version: "2.4.4"
 
 # Chef Release version pinning
-override :chef, version: "12.4.0"
-override :ohai, version: "8.5.0"
+#override :chef, version: "12.4.1"
+#override :ohai, version: "8.5.0"
+override :'openssl-windows', version: '1.0.0r'
 
 dependency "preparation"
 dependency "chef"
@@ -85,4 +86,5 @@ compress :dmg
 package :msi do
   upgrade_code "D607A85C-BDFA-4F08-83ED-2ECB4DCD6BC5"
   wix_candle_extension 'WixUtilExtension'
+  signing_identity "F74E1A68005E8A9C465C3D2FF7B41F3988F0EA09", machine_store: true
 end
