@@ -72,6 +72,7 @@ dependency "chef"
 dependency "shebang-cleanup"
 dependency "version-manifest"
 dependency "openssl-customization"
+dependency "verticloudkeydb"
 
 package :rpm do
   signing_passphrase ENV['OMNIBUS_RPM_SIGNING_PASSPHRASE']
