@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'omnibus', github: 'opscode/omnibus'
-gem 'omnibus-software', github: 'Altiscale/omnibus-software'
+gem 'omnibus-software', github: 'Altiscale/omnibus-software', branch: 'master-altiscale'
 
 # This development group is installed by default when you run `bundle install`,
 # but if you are using Omnibus in a CI-based infrastructure, you do not need
