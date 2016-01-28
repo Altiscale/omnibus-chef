@@ -30,6 +30,7 @@ build do
             "-DZLIB_INCLUDE_DIR:PATH=#{install_dir}/embedded/include",
             "-DZLIB_LIBRARY:FILEPATH=#{install_dir}/embedded/lib/libz.so",
             "-DCRYPTO_LIBRARY:FILEPATH=#{install_dir}/embedded/lib/libcrypto.so",
+            "-DMYSQL_UNIX_ADDR=/var/lib/mysql/mysql.sock",
             ".",
            ].join(" "), :env => env
 
